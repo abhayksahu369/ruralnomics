@@ -35,7 +35,7 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-gray-900">About Us</h2>
             <div className="mt-2 h-1 w-24 bg-green-600 mx-auto"></div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h3 className="text-2xl font-semibold text-gray-900">Empowering Rural Communities Through Technology</h3>
@@ -82,19 +82,21 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* RunoFresh */}
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/7/7f/CDC_South_Aquaponics_Raft_Tank_1_2010-07-17.jpg"
-              alt="Hydroponic farming"
-              className="w-full h-48 object-cover"
-            />
+            <a href="https://runofresh.netlify.app/">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/7/7f/CDC_South_Aquaponics_Raft_Tank_1_2010-07-17.jpg"
+                alt="Hydroponic farming"
+                className="w-full h-48 object-cover"
+              />
+            </a>
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-2">RunoFresh</h3>
               <p className="text-gray-600 mb-4">
                 Advanced B2B and B2C solutions for fresh produce management and distribution.
               </p>
-              <Link to="/dashboard" className="text-green-600 hover:text-green-700 font-medium">
+              <a href=' https://runofresh.netlify.app/' className="text-green-600 hover:text-green-700 font-medium">
                 Learn More →
-              </Link>
+              </a>
             </div>
           </div>
 
