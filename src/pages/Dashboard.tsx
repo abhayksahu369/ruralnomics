@@ -1,4 +1,4 @@
-import { BarChart3, Users, Sprout, Tractor, Search, Printer, Plus, Minus } from 'lucide-react';
+import { BarChart3, Users, Sprout, Tractor } from 'lucide-react';
 import { useState } from 'react';
 import {
   Chart as ChartJS,
@@ -13,7 +13,6 @@ import {
   ArcElement,
 } from 'chart.js';
 import { Line, Bar, Doughnut } from 'react-chartjs-2';
-
 
 ChartJS.register(
   CategoryScale,
@@ -34,10 +33,10 @@ export default function Dashboard() {
     runofresh: {
       name: 'RunoFresh',
       stats: [
-        { name: 'Total Orders', value: '2,345', change: '+12%', icon: BarChart3 },
-        { name: 'Active Users', value: '1,234', change: '+25%', icon: Users },
-        { name: 'Products Listed', value: '456', change: '+8%', icon: Sprout },
-        { name: 'Delivery Success', value: '98%', change: '+2%', icon: Tractor },
+        { name: 'Total Orders', value: '2,345', icon: BarChart3 },
+        { name: 'Active Users', value: '1,234', icon: Users },
+        { name: 'Products Listed', value: '456', icon: Sprout },
+        { name: 'Delivery Success Percent', value: '98%', icon: Tractor },
       ],
       description: 'B2B and B2C fresh produce management platform',
       monthlyData: {
@@ -53,10 +52,10 @@ export default function Dashboard() {
     runoagri: {
       name: 'RunoAgri',
       stats: [
-        { name: 'Active Farms', value: '1,567', change: '+15%', icon: BarChart3 },
-        { name: 'Farmers', value: '3,456', change: '+18%', icon: Users },
-        { name: 'Crop Types', value: '89', change: '+5%', icon: Sprout },
-        { name: 'Yield Improvement', value: '23%', change: '+4%', icon: Tractor },
+        { name: 'Active Farms', value: '1,567', icon: BarChart3 },
+        { name: 'Farmers', value: '3,456', icon: Users },
+        { name: 'Crop Types', value: '89', icon: Sprout },
+        { name: 'Yield Improvement', value: '23%', icon: Tractor },
       ],
       description: 'Predictive farming and analytics platform',
       monthlyData: {
@@ -72,10 +71,10 @@ export default function Dashboard() {
     runofarm: {
       name: 'RunoFarm',
       stats: [
-        { name: 'Equipment Listed', value: '789', change: '+20%', icon: BarChart3 },
-        { name: 'Active Rentals', value: '234', change: '+30%', icon: Users },
-        { name: 'Service Providers', value: '123', change: '+15%', icon: Sprout },
-        { name: 'Customer Rating', value: '4.8', change: '+0.2', icon: Tractor },
+        { name: 'Equipment Listed', value: '789', icon: BarChart3 },
+        { name: 'Active Rentals', value: '234', icon: Users },
+        { name: 'Service Providers', value: '123', icon: Sprout },
+        { name: 'Customer Rating', value: '4.8', icon: Tractor },
       ],
       description: 'Farm equipment and service marketplace',
       monthlyData: {
@@ -90,7 +89,6 @@ export default function Dashboard() {
     },
   };
 
-  
   const getChartData = (product) => {
     const lineData = {
       labels: product.monthlyData.labels,
@@ -109,7 +107,7 @@ export default function Dashboard() {
       datasets: [
         {
           label: 'Monthly Progress',
-          data: product.monthlyData[Object.keys(product.monthlyData)[1]], // This assumes the second key holds monthly progress data (e.g., "orders", "farms", etc.)
+          data: product.monthlyData[Object.keys(product.monthlyData)[1]],
           backgroundColor: 'rgba(34, 197, 94, 0.5)',
           borderColor: 'rgb(34, 197, 94)',
           borderWidth: 1,
@@ -173,11 +171,6 @@ export default function Dashboard() {
                 <div key={index} className="bg-gray-50 rounded-lg p-6">
                   <div className="flex items-center justify-between mb-4">
                     <stat.icon className="h-6 w-6 text-green-600" />
-                    <span className={`text-sm font-medium ${
-                      stat.change.startsWith('+') ? 'text-green-600' : 'text-red-600'
-                    }`}>
-                      {stat.change}
-                    </span>
                   </div>
                   <p className="text-sm text-gray-600 mb-1">{stat.name}</p>
                   <p className="text-2xl font-bold">{stat.value}</p>
@@ -188,15 +181,15 @@ export default function Dashboard() {
             {/* Charts */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-white rounded-lg p-4 shadow">
-                <h3 className="text-lg font-semibold mb-4">Growth Trend</h3>
+                <h3 className="text-lg font-semibold mb-4">Monthly Increase in Users</h3>
                 <Line data={lineData} options={{ responsive: true }} />
               </div>
               <div className="bg-white rounded-lg p-4 shadow">
-                <h3 className="text-lg font-semibold mb-4">Monthly Progress</h3>
+                <h3 className="text-lg font-semibold mb-4">Revenue Generation</h3>
                 <Bar data={barData} options={{ responsive: true }} />
               </div>
               <div className="bg-white rounded-lg p-4 shadow">
-                <h3 className="text-lg font-semibold mb-4">Distribution</h3>
+                <h3 className="text-lg font-semibold mb-4">Consumer Pattern</h3>
                 <Doughnut data={doughnutData} options={{ responsive: true }} />
               </div>
             </div>
