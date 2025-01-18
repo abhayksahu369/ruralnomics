@@ -82,7 +82,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* RunoFresh */}
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <a href="https://runofresh.netlify.app/">
+            <a href="https://runofresh.netlify.app/" target='_blank'>
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/7/7f/CDC_South_Aquaponics_Raft_Tank_1_2010-07-17.jpg"
                 alt="Hydroponic farming"
@@ -94,14 +94,14 @@ export default function Home() {
               <p className="text-gray-600 mb-4">
                 Advanced B2B and B2C solutions for fresh produce management and distribution.
               </p>
-              <a href=' https://runofresh.netlify.app/' className="text-green-600 hover:text-green-700 font-medium">
+              <a href=' https://runofresh.netlify.app/' target='_blank' className="text-green-600 hover:text-green-700 font-medium">
                 Learn More →
               </a>
             </div>
           </div>
           {/* Rcare4u */}
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <a href="https://rcare4u.netlify.app/">
+            <a href="https://rcare4u.netlify.app/" target='_blank'>
               <img
                 src="https://wallpaperaccess.com/full/624111.jpg"
                 alt="Hydroponic farming"
@@ -113,7 +113,7 @@ export default function Home() {
               <p className="text-gray-600 mb-4">
               Seamless solutions for connecting users with doctors and managing diverse healthcare services efficiently.
               </p>
-              <a href=' https://rcare4u.netlify.app/' className="text-green-600 hover:text-green-700 font-medium">
+              <a href=' https://rcare4u.netlify.app/' target='_blank' className="text-green-600 hover:text-green-700 font-medium">
                 Learn More →
               </a>
             </div>
